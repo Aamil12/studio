@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['Poppins', 'sans-serif'],
+        headline: ['Poppins', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -88,10 +88,53 @@ export default {
             height: '0',
           },
         },
+        'fade-in': {
+          'from': { opacity: '0' },
+          'to': { opacity: '1' },
+        },
+        'fade-in-up': {
+            '0%': {
+                opacity: '0',
+                transform: 'translateY(20px)'
+            },
+            '100%': {
+                opacity: '1',
+                transform: 'translateY(0)'
+            },
+        },
+        'float-up': {
+            '0%': {
+                transform: 'translateY(110vh) scale(0.8)',
+                opacity: '1'
+            },
+            '10%': {
+                transform: 'translateY(100vh) scale(0.9)',
+                opacity: '1'
+            },
+            '90%': {
+              opacity: '1',
+            },
+            '100%': {
+                transform: 'translateY(-20vh) scale(1.2)',
+                opacity: '0'
+            },
+        },
+        'flicker': {
+            '0%, 18%, 22%, 25%, 53%, 57%, 100%': {
+                filter: 'drop-shadow(0 0 5px hsl(var(--primary))) drop-shadow(0 0 15px hsl(var(--primary)))'
+            },
+            '20%, 24%, 55%': {
+                filter: 'none'
+            }
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-in': 'fade-in 1.5s ease-in-out forwards',
+        'fade-in-up': 'fade-in-up 1s ease-out forwards',
+        'float-up': 'float-up 10s ease-in-out infinite',
+        'flicker': 'flicker 2s linear infinite',
       },
     },
   },
