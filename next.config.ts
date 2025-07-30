@@ -1,7 +1,13 @@
 import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {
+const repo = 'my-nextjs-app';
+const assetPrefix = `/${repo}/`;
+const basePath = `/${repo}`;
 
+const nextConfig: NextConfig = {
+  output: 'export',
+  assetPrefix: assetPrefix,
+  basePath: basePath,
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -9,7 +15,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true, 
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -19,8 +25,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  output: 'export',  
-  trailingSlash: true,  
+  trailingSlash: true,
 };
 
 export default nextConfig;
