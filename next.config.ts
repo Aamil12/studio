@@ -1,6 +1,6 @@
 import type { NextConfig } from 'next';
 
-const repo = 'my-nextjs-app';
+const repo = 'studio';
 const assetPrefix = `/${repo}/`;
 const basePath = `/${repo}`;
 
